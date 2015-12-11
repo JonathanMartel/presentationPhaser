@@ -1,0 +1,37 @@
+{
+    "heros" : { 
+                "image" : "chevre"
+              },
+    "niveaux" : [   {
+                        "nom":"Initiation",
+                        "tilemap_json" : "plateforme_niv1.json",
+                        "couche" : "plateforme",
+                        "collision" : [13,14,15,37, 39, 41],
+                        "infoTuile" : "",
+                        "heros" : {"x" : 400, "y":800, "image" :"chevre"},
+                        "ennemis" : [
+                            {"x" : 100, "y" : 500},
+                            {"x" : 200, "y" : 500},
+                            {"x" : 300, "y" : 500},
+                            {"x" : 400, "y" : 500},
+                            {"x" : 500, "y" : 500}
+                        ],
+                        "fin" : {"tileX" : 39, "tileY" : 28}
+                    },
+                    {
+                        "nom":"Second",
+                        "tilemap_json" : "plateforme_niv2.json",
+                        "couche" : "plateforme",
+                        "collision" : [3,4,5, 13,14,15,37, 39, 41],
+                        "infoTuile" : "",
+                        "heros" : {"x" : 10, "y":400, "image" :"chevre"},
+                        "ennemis" : [
+                            {"x" : 100, "y" : 500},
+                            {"x" : 400, "y" : 500},
+                            {"x" : 500, "y" : 500}
+                        ],
+                        "fin" : {"tileX" : 25, "tileY" : 10}
+                    }    
+                ]
+    
+}
