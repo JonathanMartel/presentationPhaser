@@ -2,6 +2,10 @@
 Voici les quelques fichiers utilisés pour la démonstration de Phaser du 10 décembre 2015 au département TIM. J'ai corrigé certains petits éléments,
 mais l'essentiel est là. 
 
+#Avertissement
+Le code présenté n'a été écrit que pour développer mon mes cours. Il ne s'agit en rien de code de production. En ce sens, il n'est pas optimisé, ni 
+testé exhaustivement. Il sert plutôt de "proof of concept".
+
 ##demoBase
 Structure très simple pour montrer Phaser. Un seul fichier javascript, sans utilisé l'orienté objet.
 
@@ -24,6 +28,3 @@ Les démos présentés avant ne comprennent pas les tweens et les particules. J'
 utilise l'héritage, mais aussi les tweens et les systèmes de particules. Il permet de lancer des feux d'artifice sur le clic de la souris.
 
 
-#Avertissement
-Le code présenté n'a été écrit que pour développer mon mes cours. Il ne s'agit en rien de code de production. En ce sens, il n'est pas optimisé, ni 
-testé exhaustivement. Il sert plutôt de "proof of concept".
