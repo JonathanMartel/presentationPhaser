@@ -19,3 +19,11 @@ Jeu de plateforme avec chargement de niveau dynamique. C'est la démo la plus av
 héritent des Sprites (Loup, Heros, Projectile), utilise un pool de ressource (les projectiles) et possède 2 niveaux qui sont chargés à partir d'un fichier JSON
 maître (maitre.json), qui ensuite va charger les informations dans les JSON fils (plateforme_niv1.json)
 
+## Feu d'artifice POO
+Les démos présentés avant ne comprennent pas les tweens et les particules. J'inclus donc ici le code de démonstration d'un exercice (448) qui
+utilise l'héritage, mais aussi les tweens et les systèmes de particules. Il permet de lancer des feux d'artifice sur le clic de la souris.
+
+
+#Avertissement
+Le code présenté n'a été écrit que pour développer mon mes cours. Il ne s'agit en rien de code de production. En ce sens, il n'est pas optimisé, ni 
+testé exhaustivement. Il sert plutôt de "proof of concept".
