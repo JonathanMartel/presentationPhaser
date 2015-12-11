@@ -1,3 +1,11 @@
+/* 
+ * @author Jonathan Martel
+ * @version 1.0
+ * @update 2015-12-10
+ * @license The MIT License (MIT) Copyright (c) 2015 Jonathan Martel
+ * 
+ */
+
 var jouer = (function () {
 
     var jouer = function (jeu) {
@@ -8,12 +16,9 @@ var jouer = (function () {
             _jeu.physics.startSystem(Phaser.Physics.ARCADE);
             Phaser.Physics.enableBody = true;
 
-            //this.heros = jeu.add.sprite(64, 64, 'heros');
-            //  This sprite is using a texture atlas for all of its animation data
             _jeu.heros = _jeu.add.sprite(64, 64, 'chevre');
-            //_jeu.heros.anchor.setTo(0.5,0.5);
             _jeu.heros.animations.add('idle', Phaser.Animation.generateFrameNames('chevre_idle', 0, 79, '', 4), 30, true);
-             _jeu.heros.animations.add('marche', Phaser.Animation.generateFrameNames('chevre_marche', 0, 29, '', 4), 30, true);
+            _jeu.heros.animations.add('marche', Phaser.Animation.generateFrameNames('chevre_marche', 0, 29, '', 4), 30, true);
 
             _jeu.heros.scale = new Phaser.Point(.21, .21);
             _jeu.heros.vitesse = 200;
@@ -33,7 +38,7 @@ var jouer = (function () {
             _jeu.mesEnnemis.create(64 * 5, 64 * 8, "loup");
             _jeu.mesEnnemis.create(64 * 6, 64 * 1, "loup");
             _jeu.mesEnnemis.setAll('body.velocity.x', 150);
-            //_jeu.mesEnnemis.setAll('body.immovable', true);
+            
             _jeu.mesEnnemis.setAll('scale', new Phaser.Point(.21, .21));
             _jeu.mesEnnemis.setAll('body.immovable', true);
             _jeu.mesEnnemis.callAll('animations.add', "animations", "loup_marche");
@@ -80,9 +85,9 @@ var jouer = (function () {
         },
         update: function () { // Sur chaque frame
             _jeu.physics.arcade.collide(_jeu.heros, _jeu.couche.mur);
-            //_jeu.physics.arcade.collide(_jeu.heros, _jeu.couche.sol);
+            _jeu.physics.arcade.collide(_jeu.heros, _jeu.couche.sol);
             _jeu.physics.arcade.collide(_jeu.mesEnnemis, _jeu.couche.mur, this.changeDirection);
-            //_jeu.physics.arcade.collide(_jeu.mesEnnemis, _jeu.couche.sol, this.changeDirection);
+            _jeu.physics.arcade.collide(_jeu.mesEnnemis, _jeu.couche.sol, this.changeDirection);
             _jeu.physics.arcade.overlap(_jeu.mesEnnemis, _jeu.mesEnnemis, this.changeDirection);
             _jeu.physics.arcade.collide(_jeu.mesEnnemis, _jeu.heros, this.toucher);
             _jeu.physics.arcade.collide(_jeu.pgFleurs, _jeu.heros, this.ramasser);
@@ -105,14 +110,14 @@ var jouer = (function () {
                 _jeu.heros.animations.play('idle', 30, true);
 
             } else {
-                //this.heros.animations.setFrame(this.heros.animations.currentFrame)
+               
                 _jeu.heros.animations.play('marche', 30, true);
             }
 			var temps = new Date(_jeu.time.now - _jeu.tempsDebut);
 			var min = ('0' + temps.getMinutes()).slice(-2);
-			//var min = temps.getMinutes();
+			
 			var sec = ('0' + temps.getSeconds()).slice(-2);
-			//var sec = temps.getSeconds();
+			
 			_jeu.txtTemps.setText("Temps : "+min+":"+sec);
         },
 		render : function()
@@ -147,7 +152,10 @@ var jouer = (function () {
 
             _jeu.pgFleurs.removeChild(fleur);
             fleur.destroy();
-            //fleur.destroy();
+            if(_jeu.pgFleurs.length == 0)
+            {
+                _jeu.state.start("Gagnant");
+            }
         }
 
     };

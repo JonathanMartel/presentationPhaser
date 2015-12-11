@@ -1,3 +1,11 @@
+/* 
+ * @author Jonathan Martel
+ * @version 1.0
+ * @update 2015-12-10
+ * @license The MIT License (MIT) Copyright (c) 2015 Jonathan Martel
+ * 
+ */
+
 var Loup = (function () {
     //var velocite = 400;
     

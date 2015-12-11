@@ -1,3 +1,11 @@
+/* 
+ * @author Jonathan Martel
+ * @version 1.0
+ * @update 2015-12-10
+ * @license The MIT License (MIT) Copyright (c) 2015 Jonathan Martel
+ * 
+ */
+
 var menu = (function () {
 	var _jeu;
 	var menu = function (jeu) {
@@ -6,10 +14,8 @@ var menu = (function () {
 
 	menu.prototype = {
 		create: function () {
-			//var gameTitle = this.game.add.sprite(160,160,"gametitle");
-			//gameTitle.anchor.setTo(0.5,0.5);
-			var playButton = _jeu.add.button(_jeu.world.centerX, _jeu.world.centerY, "bouton", this.jouer, this);
-			playButton.anchor.setTo(0.5, 0.5);
+			var btnJouer = _jeu.add.button(_jeu.world.centerX, _jeu.world.centerY, "bouton", this.jouer, this);
+			btnJouer.anchor.setTo(0.5, 0.5);
 			console.log('Menu');
 			//  _jeu.barreChargement.destroy();
 		},

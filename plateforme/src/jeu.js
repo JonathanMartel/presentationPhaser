@@ -1,7 +1,10 @@
-/* Source : 
-http://www.emanueleferonato.com/2014/08/28/phaser-tutorial-understanding-phaser-states/
-*/
-
+/* 
+ * @author Jonathan Martel
+ * @version 1.0
+ * @update 2015-12-10
+ * @license The MIT License (MIT) Copyright (c) 2015 Jonathan Martel
+ * 
+ */
 (function () {  // IIFE
 "use strict";
         var jeu = new Phaser.Game(768, 640, Phaser.AUTO, 'jeu');
